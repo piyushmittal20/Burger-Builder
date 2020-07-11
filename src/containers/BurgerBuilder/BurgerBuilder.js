@@ -10,7 +10,8 @@ const INGREDIENT_PRICES  = {
     salad: 0.5,
     cheese: 0.4,
     meat: 1.3,
-    bacon: 0.7
+    bacon: 0.7,
+    paneer: 1.1
 }
 
 class BurgerBuilder extends Component {
@@ -23,6 +24,7 @@ class BurgerBuilder extends Component {
         ingredients: {
             salad: 0,
             bacon: 0,
+            paneer: 0,
             cheese: 0,
             meat: 0,
         },
@@ -97,13 +99,23 @@ class BurgerBuilder extends Component {
         for(let key in disabledInfo){
             disabledInfo[key] = disabledInfo[key] <= 0
         }
+
+        let categoryInfo = null
+        if(this.state.ingredients.meat > 0){
+            categoryInfo = 'NON-VEG Burger'
+        }
+        if(this.state.ingredients.meat === 0) {
+            categoryInfo = 'VEG Burger'
+        } 
+
         return (
             <Aux>
                 <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}> 
                     <OrderSummary ingredients ={this.state.ingredients} 
                     purchaseCancelled={this.purchaseCancelHandler}
                     purchaseContinued={this.purchaseContinueHandler}
-                    price={this.state.totalPrice}/>
+                    price={this.state.totalPrice}
+                    category={categoryInfo}/>
                 </Modal>
                 <Burger ingredients = {this.state.ingredients} />
                 <BuildControls 

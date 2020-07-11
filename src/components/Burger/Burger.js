@@ -13,7 +13,7 @@ const burger = (props) => {
         return arr.concat(el)
     }, [])
     if(transformedIngredients.length === 0){
-        transformedIngredients = <p><em>Let's add something!!</em><span role='img'>🍔🍔</span></p>
+        transformedIngredients = <p style={{color: '#703809', textTransform: 'capitalize'}}>Let's add some Ingredients</p>
     }
     return (
         <div className={classes.Burger}>

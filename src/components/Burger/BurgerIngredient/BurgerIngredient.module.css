@@ -111,3 +111,11 @@
     background: linear-gradient(#bf3813, #c45e38);
     margin: 2% auto;
 }
+
+.Paneer {
+    width: 83%;
+    height: 5.5%;
+    background: linear-gradient(rgb(237, 237, 237),rgb(243, 243, 243), rgb(247, 247, 247));
+    margin: 2% auto;
+    border-radius: 5px;
+}
