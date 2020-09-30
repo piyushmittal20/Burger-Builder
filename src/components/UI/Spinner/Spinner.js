@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Spineer.css';
 
 const spinner = () => {
-    return(
+    return (
         <div className={classes.loader}>Loading...</div>
     )
 }
