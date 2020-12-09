@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 import { updatedObject } from '../../shared/utility';
 
-const initalState = {
+const initialState = {
     token: null,
     userId: null,
     error: null,
@@ -9,7 +9,7 @@ const initalState = {
     authRedirectPath: '/'
 }
 
-const reducer = (state = initalState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case (actionTypes.AUTH_START):
             return updatedObject(state, { error: null, loading: true });
